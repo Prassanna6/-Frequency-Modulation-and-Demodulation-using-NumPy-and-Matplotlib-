@@ -34,6 +34,43 @@ __Algorithm:__
 
 __Programme:__
 
+```
+// Parameters
+Am = 3.7;        
+Fm = 166;         
+B  =  5.6;         
+Ac = 7.4;          
+Fc = 1660;       
+Fs = 16600;       
+T  = 0:1/Fs:2/Fm; 
+
+// Message signal
+em = Am * cos(2*%pi*Fm*T);
+subplot(3,1,1);
+plot(T, em);
+xtitle("Message Signal");
+xgrid();
+
+// Carrier signal
+ec = Ac * cos(2*%pi*Fc*T);
+subplot(3,1,2);
+plot(T, ec);
+xtitle("Carrier Signal");
+xgrid();
+// FM signal
+efm = Ac * cos( (2*%pi*Fc*T) + (B * sin(2*%pi*Fm*T)) );
+subplot(3,1,3);
+plot(T, efm);
+xtitle("FM Signal");
+xgrid();
+```
+
 __Output:__
 
+
+<img width="1600" height="999" alt="image" src="https://github.com/user-attachments/assets/ed6d9445-e85e-4966-89de-57eb88b91e1a" />
+
+
+
 __Result:__
+Thus, the FM frequency modulation signal is generated using scilab
