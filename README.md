@@ -35,42 +35,43 @@ __Algorithm:__
 __Programme:__
 
 ```
-// Parameters
-Am = 3.7;        
-Fm = 166;         
-B  =  5.6;         
-Ac = 7.4;          
-Fc = 1660;       
-Fs = 16600;       
-T  = 0:1/Fs:2/Fm; 
+import numpy as np
+import matplotlib.pyplot as plt
 
-// Message signal
-em = Am * cos(2*%pi*Fm*T);
-subplot(3,1,1);
-plot(T, em);
-xtitle("Message Signal");
-xgrid();
+am = 3.7
+fm = 166
+fs = 16600
 
-// Carrier signal
-ec = Ac * cos(2*%pi*Fc*T);
-subplot(3,1,2);
-plot(T, ec);
-xtitle("Carrier Signal");
-xgrid();
-// FM signal
-efm = Ac * cos( (2*%pi*Fc*T) + (B * sin(2*%pi*Fm*T)) );
-subplot(3,1,3);
-plot(T, efm);
-xtitle("FM Signal");
-xgrid();
+t = np.arange(0, 2/fm, 1/fs)
+
+m = am * np.cos(2 * np.pi * fm * t)
+plt.subplot(3,1,1)
+plt.plot(t, m)
+
+ac = 7.4
+fc = 1660
+
+c = ac * np.cos(2 * np.pi * fc * t)
+plt.subplot(3,1,2)
+plt.plot(t, c)
+
+b = 6.7
+
+s = ac * np.cos(2 * np.pi * fc * t + np.sin(2 * np.pi * fm * t))
+plt.subplot(3,1,3)
+plt.plot(t, s)
+plt tight_layout()
+
 ```
 
 __Output:__
 
+<img width="1080" height="704" alt="image" src="https://github.com/user-attachments/assets/60a32836-5b1c-40a2-adf3-baaaab691e99" />
 
-<img width="1600" height="999" alt="image" src="https://github.com/user-attachments/assets/ed6d9445-e85e-4966-89de-57eb88b91e1a" />
+__Tabulation:__
 
+<img width="1080" height="672" alt="image" src="https://github.com/user-attachments/assets/d7d450b7-653c-4b3e-809a-3618c97e9990" />
 
 
 __Result:__
-Thus, the FM frequency modulation signal is generated using scilab
+Thus, the FM frequency modulation signal is generated using python
