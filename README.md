@@ -38,9 +38,9 @@ __Programme:__
 import numpy as np
 import matplotlib.pyplot as plt
 
-am = 3.7
-fm = 166
-fs = 16600
+am = 10.3
+fm = 386
+fs = 38600
 
 t = np.arange(0, 2/fm, 1/fs)
 
@@ -48,8 +48,8 @@ m = am * np.cos(2 * np.pi * fm * t)
 plt.subplot(3,1,1)
 plt.plot(t, m)
 
-ac = 7.4
-fc = 1660
+ac = 20.6
+fc = 3860
 
 c = ac * np.cos(2 * np.pi * fc * t)
 plt.subplot(3,1,2)
@@ -70,7 +70,8 @@ __Output:__
 
 __Tabulation:__
 
-<img width="1080" height="672" alt="image" src="https://github.com/user-attachments/assets/d7d450b7-653c-4b3e-809a-3618c97e9990" />
+![WhatsApp Image 2026-04-09 at 1 29 55 PM](https://github.com/user-attachments/assets/0931ab7c-b9fa-4296-861c-d264698ac1e3)
+
 
 
 __Result:__
